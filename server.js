@@ -7,7 +7,7 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI=mongodb://admin:secret@localhost:27017/?authSource=admin, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected'));
@@ -20,7 +20,7 @@ app.use(session({
   secret: 'busbookingsecretkey',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI=mongodb://admin:secret@localhost:27017/?authSource=admin }),
   cookie: { maxAge: 1000 * 60 * 60 }
 }));
 
@@ -32,4 +32,4 @@ app.use('/', authRoutes);
 app.use('/', busRoutes);
 app.use('/', adminRoutes);
 
-app.listen(3000, () => console.log('Server started on http://localhost:3000'));
+app.listen(3000, () => console.log('Server started on http://43.204.150.199:3000'));
