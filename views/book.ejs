@@ -1,0 +1,7 @@
+<h2>Book Your Seat</h2>
+<form action="/payment" method="POST">
+  <input type="hidden" name="busId" value="<%= bus._id %>">
+  <input name="passengerName" placeholder="Passenger Name" required>
+  <input type="number" name="seatCount" placeholder="Number of Seats" min="1" max="<%= bus.seats %>" required>
+  <button type="submit">Proceed to Payment</button>
+</form>

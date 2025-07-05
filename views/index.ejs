@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bus Booking App</title>
+</head>
+<body>
+  <h1>Welcome to Bus Booking</h1>
+
+  <% if (session.userId) { %>
+    <p>Welcome! <a href="/logout">Logout</a></p>
+    <a href="/my-bookings">My Bookings</a>
+    <% if (session.isAdmin) { %>
+      <a href="/admin">Admin Dashboard</a>
+    <% } %>
+  <% } else { %>
+    <a href="/login">Login</a> | <a href="/register">Register</a>
+  <% } %>
+
+  <form action="/search" method="POST">
+    <input name="from" placeholder="From" required>
+    <input name="to" placeholder="To" required>
+    <input type="date" name="date" required>
+    <button type="submit">Search Buses</button>
+  </form>
+</body>
+</html>

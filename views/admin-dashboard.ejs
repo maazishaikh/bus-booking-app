@@ -1,0 +1,13 @@
+<h2>Admin Dashboard</h2>
+<a href="/admin/add">Add New Bus</a>
+<ul>
+  <% buses.forEach(bus => { %>
+    <li>
+      <strong><%= bus.name %></strong> - <%= bus.from %> to <%= bus.to %> on <%= bus.date %> @ <%= bus.time %> |
+      Seats: <%= bus.seats %> | ₹<%= bus.price %>
+      <form action="/admin/delete/<%= bus._id %>" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

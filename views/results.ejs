@@ -1,0 +1,14 @@
+<h2>Available Buses</h2>
+<ul>
+  <% buses.forEach(bus => { %>
+    <li>
+      <strong><%= bus.name %></strong> - ₹<%= bus.price %> <br>
+      <%= bus.from %> to <%= bus.to %> at <%= bus.time %> on <%= bus.date %> <br>
+      Seats: <%= bus.seats %>
+      <form action="/book" method="POST">
+        <input type="hidden" name="busId" value="<%= bus._id %>">
+        <button type="submit">Book Now</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

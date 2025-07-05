@@ -1,0 +1,10 @@
+<h2>My Bookings</h2>
+<ul>
+  <% bookings.forEach(booking => { %>
+    <li>
+      <%= booking.passengerName %> - <%= booking.bus.name %> |
+      <%= booking.bus.from %> to <%= booking.bus.to %> |
+      Seats: <%= booking.seatCount %> | ₹<%= booking.totalPrice %>
+    </li>
+  <% }) %>
+</ul>

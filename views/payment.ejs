@@ -1,0 +1,10 @@
+<h2>Payment</h2>
+<p>Bus: <%= bus.name %></p>
+<p>Total Amount: ₹<%= totalPrice %></p>
+
+<form action="/confirm-booking" method="POST">
+  <input type="hidden" name="busId" value="<%= bus._id %>">
+  <input type="hidden" name="seatCount" value="<%= seatCount %>">
+  <input type="hidden" name="passengerName" value="<%= passengerName %>">
+  <button type="submit">Pay Now & Confirm</button>
+</form>
