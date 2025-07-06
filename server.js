@@ -32,4 +32,4 @@ app.use('/', authRoutes);
 app.use('/', busRoutes);
 app.use('/', adminRoutes);
 
-app.listen(3000, () => console.log('Server started on http://35.154.170.175:3000'));
+app.listen(3000, () => console.log('Server started on http://13.233.28.31:3000'));
